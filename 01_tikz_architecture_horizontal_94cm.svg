@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1880 326" width="1880" height="326" font-family="'Montserrat', 'Inter', 'Instrument Sans', 'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrSlate" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 1 1.5 L 10.5 6 L 1 10.5 z" fill="#1E293B"/>
+    </marker>
+    <marker id="arrEmerald" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7.5" markerHeight="7.5" orient="auto">
+      <path d="M 1 1.5 L 10.5 6 L 1 10.5 z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <!-- Clean Academic Vector Plate -->
+  <rect x="2" y="2" width="1876" height="322" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- STEP 1: DATA ACQUISITION -->
+  <g transform="translate(36, 26)">
+    <rect width="326" height="178" rx="14" ry="14" fill="#F8FAFC" stroke="#475569" stroke-width="2.4"/>
+    <rect x="18" y="14" width="176" height="28" rx="7" ry="7" fill="#E2E8F0"/>
+    <text x="106" y="33" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1E293B">KHÂU 1 • THU THẬP</text>
+    <text x="163" y="70" text-anchor="middle" font-size="18.5" font-weight="800" fill="#0F172A">DỮ LIỆU ĐẦU VÀO</text>
+    <line x1="24" y1="84" x2="302" y2="84" stroke="#E2E8F0" stroke-width="1.5"/>
+    <text x="163" y="108" text-anchor="middle" font-size="15.5" font-weight="500" fill="#334155">Luồng Camera 1080p / SUMO</text>
+    <text x="163" y="132" text-anchor="middle" font-size="15" fill="#475569">Trích xuất tọa độ, vận tốc, ID</text>
+    <rect x="24" y="145" width="278" height="22" rx="5" fill="#F1F5F9"/>
+    <text x="163" y="160" text-anchor="middle" font-size="13" font-weight="600" fill="#475569" font-family="'IBM Plex Mono', Consolas, monospace">input.py • HAL Interface</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="362" y1="115" x2="404" y2="115" stroke="#1E293B" stroke-width="3" marker-end="url(#arrSlate)"/>
+
+  <!-- STEP 2: AI PERCEPTION & S_CONGESTION -->
+  <g transform="translate(410, 26)">
+    <rect width="326" height="178" rx="14" ry="14" fill="#F0F9FF" stroke="#0284C7" stroke-width="2.8"/>
+    <rect x="18" y="14" width="204" height="28" rx="7" ry="7" fill="#0284C7"/>
+    <text x="120" y="33" text-anchor="middle" font-size="13.5" font-weight="700" fill="#FFFFFF">KHÂU 2 • NHẬN THỨC AI</text>
+    <text x="163" y="70" text-anchor="middle" font-size="18.5" font-weight="800" fill="#0369A1">YOLOv12m &amp; ÁP SUẤT S</text>
+    <line x1="24" y1="84" x2="302" y2="84" stroke="#BAE6FD" stroke-width="1.5"/>
+    <text x="163" y="108" text-anchor="middle" font-size="15.5" font-weight="600" fill="#0F172A">Phân loại 7 lớp xe Việt Nam (K_i)</text>
+    <text x="163" y="132" text-anchor="middle" font-size="15" font-weight="700" fill="#0284C7">S_cong = Σ(N_i·K_i) + S_mặt_đường</text>
+    <rect x="24" y="145" width="278" height="22" rx="5" fill="#E0F2FE"/>
+    <text x="163" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="#0369A1" font-family="'IBM Plex Mono', Consolas, monospace">has_emer Flag • 23,41 ms</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="736" y1="115" x2="778" y2="115" stroke="#1E293B" stroke-width="3" marker-end="url(#arrSlate)"/>
+
+  <!-- STEP 3: DUAL-MODE HYBRID CONTROLLER -->
+  <g transform="translate(784, 26)">
+    <rect width="326" height="178" rx="14" ry="14" fill="#F0FDF4" stroke="#059669" stroke-width="2.8"/>
+    <rect x="18" y="14" width="214" height="28" rx="7" ry="7" fill="#059669"/>
+    <text x="125" y="33" text-anchor="middle" font-size="13.5" font-weight="700" fill="#FFFFFF">KHÂU 3 • ĐIỀU KHIỂN LAI</text>
+    <text x="163" y="70" text-anchor="middle" font-size="18.5" font-weight="800" fill="#065F46">BỘ ĐIỀU KHIỂN FSM</text>
+    <line x1="24" y1="84" x2="302" y2="84" stroke="#BBF7D0" stroke-width="1.5"/>
+    <text x="163" y="108" text-anchor="middle" font-size="15.5" font-weight="600" fill="#0F172A">Chu kỳ nền 100s (47s–3s–50s)</text>
+    <text x="163" y="132" text-anchor="middle" font-size="15" font-weight="600" fill="#047857">Xét duyệt 4 kịch bản TH1 – TH4</text>
+    <rect x="24" y="145" width="278" height="22" rx="5" fill="#DCFCE7"/>
+    <text x="163" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="#065F46" font-family="'IBM Plex Mono', Consolas, monospace">engine.py • NCHRP Report 812</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="1110" y1="115" x2="1152" y2="115" stroke="#1E293B" stroke-width="3" marker-end="url(#arrSlate)"/>
+
+  <!-- STEP 4: SAFETY INTERLOCK -->
+  <g transform="translate(1158, 26)">
+    <rect width="326" height="178" rx="14" ry="14" fill="#FFFBEB" stroke="#D97706" stroke-width="2.8"/>
+    <rect x="18" y="14" width="208" height="28" rx="7" ry="7" fill="#D97706"/>
+    <text x="122" y="33" text-anchor="middle" font-size="13.5" font-weight="700" fill="#FFFFFF">KHÂU 4 • KHÓA AN TOÀN</text>
+    <text x="163" y="70" text-anchor="middle" font-size="18.5" font-weight="800" fill="#B45309">BẢO VỆ CHUYỂN PHA</text>
+    <line x1="24" y1="84" x2="302" y2="84" stroke="#FDE68A" stroke-width="1.5"/>
+    <text x="163" y="108" text-anchor="middle" font-size="15.5" font-weight="600" fill="#0F172A">Duy trì 3s Đèn Vàng cố định</text>
+    <text x="163" y="132" text-anchor="middle" font-size="15" font-weight="700" fill="#B45309">+ T_wait = 2s Toàn Đỏ dọn nút</text>
+    <rect x="24" y="145" width="278" height="22" rx="5" fill="#FEF3C7"/>
+    <text x="163" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E" font-family="'IBM Plex Mono', Consolas, monospace">G_min = 10s • T_red ≤ 100s</text>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <line x1="1484" y1="115" x2="1526" y2="115" stroke="#1E293B" stroke-width="3" marker-end="url(#arrSlate)"/>
+
+  <!-- STEP 5: SIGNAL ACTUATION -->
+  <g transform="translate(1532, 26)">
+    <rect width="312" height="178" rx="14" ry="14" fill="#ECFDF5" stroke="#059669" stroke-width="2.8"/>
+    <rect x="18" y="14" width="196" height="28" rx="7" ry="7" fill="#047857"/>
+    <text x="116" y="33" text-anchor="middle" font-size="13.5" font-weight="700" fill="#FFFFFF">KHÂU 5 • CHẤP HÀNH</text>
+    <text x="156" y="70" text-anchor="middle" font-size="18.5" font-weight="800" fill="#065F46">CẬP NHẬT TÍN HIỆU</text>
+    <line x1="22" y1="84" x2="290" y2="84" stroke="#A7F3D0" stroke-width="1.5"/>
+    <text x="156" y="108" text-anchor="middle" font-size="15.5" font-weight="600" fill="#0F172A">Truyền lệnh qua giao thức TraCI</text>
+    <text x="156" y="132" text-anchor="middle" font-size="15" fill="#047857">Đồng bộ cụm đèn trục EW ⊥ NS</text>
+    <rect x="22" y="145" width="268" height="22" rx="5" fill="#D1FAE5"/>
+    <text x="156" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="#065F46" font-family="'IBM Plex Mono', Consolas, monospace">SUMO v1.27.1 • loop.py</text>
+  </g>
+
+  <!-- 1 Hz Closed-Loop Feedback Bus -->
+  <path d="M 1688 204 L 1688 278 L 199 278 L 199 212" fill="none" stroke="#059669" stroke-width="3.4" stroke-dasharray="12,7" marker-end="url(#arrEmerald)"/>
+
+  <!-- Feedback Label Pill -->
+  <rect x="520" y="255" width="840" height="44" rx="22" ry="22" fill="#ECFDF5" stroke="#059669" stroke-width="2.2"/>
+  <text x="940" y="283" text-anchor="middle" font-size="16.5" font-weight="800" fill="#065F46">
+    VÒNG LẶP PHẢN HỒI KHÉP KÍN THỜI GIAN THỰC — TẦN SỐ QUÉT 1 Hz (Δt = 1,0s • AI chiếm 2,34% chu kỳ)
+  </text>
+</svg>

@@ -1,0 +1,76 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage{mathptmx}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usetikzlibrary{calc,arrows.meta,positioning,shapes.geometric,fit,backgrounds}
+
+\definecolor{Navy}{HTML}{0F2537}
+\definecolor{Teal}{HTML}{0D6E74}
+\definecolor{Gold}{HTML}{C59A43}
+\definecolor{DarkBlue}{HTML}{1565C0}
+\definecolor{DarkRed}{HTML}{C62828}
+\definecolor{DarkGreen}{HTML}{2E7D32}
+\definecolor{Amber}{HTML}{E65100}
+\definecolor{LightBlueBg}{HTML}{E3F2FD}
+\definecolor{LightGreenBg}{HTML}{E8F5E9}
+\definecolor{LightRedBg}{HTML}{FFEBEE}
+\definecolor{LightGrayBg}{HTML}{F5F5F5}
+
+\begin{document}
+\begin{tikzpicture}[
+    state/.style={
+        draw=Navy,
+        rounded corners=5pt,
+        line width=1.0pt,
+        fill=LightGrayBg,
+        align=center,
+        inner sep=3.2pt,
+        font=\fontsize{9.5pt}{11.2pt}\selectfont
+    },
+    arrow/.style={-{Stealth[length=4.5pt, width=3.8pt]}, line width=1.0pt, draw=Navy},
+    cond/.style={font=\fontsize{8.5pt}{10.2pt}\selectfont\itshape, text=DarkRed}
+]
+
+    \node[state, fill=LightGreenBg, draw=DarkGreen, text width=6.5cm] (greenEW) at (0, 1.55) {
+        \textbf{TRẠNG THÁI 1: PHA XANH TRỤC EW}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont Trục EW: \textbf{XANH} ($47\text{s}$) \;|\; Trục NS: \textbf{ĐỎ} ($50\text{s}$)}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont Ngưỡng xanh tối thiểu: $G_{\min} = 10\text{s}$}
+    };
+
+    \node[state, fill=LightRedBg, draw=DarkRed, text width=3.9cm] (trans1) at (5.2, 0) {
+        \textbf{CHUYỂN PHA AN TOÀN}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont Đèn Vàng cố định: $3\text{s}$}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont Toàn Đỏ: $T_{\text{wait}} = 2\text{s}$}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont (Làm sạch tâm nút giao)}
+    };
+
+    \node[state, fill=LightGreenBg, draw=DarkGreen, text width=6.5cm] (greenNS) at (0, -1.55) {
+        \textbf{TRẠNG THÁI 2: PHA XANH TRỤC NS}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont Trục NS: \textbf{XANH} ($47\text{s}$) \;|\; Trục EW: \textbf{ĐỎ} ($50\text{s}$)}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont Ngưỡng xanh tối thiểu: $G_{\min} = 10\text{s}$}
+    };
+
+    \node[state, fill=LightRedBg, draw=DarkRed, text width=3.9cm] (trans2) at (-5.2, 0) {
+        \textbf{CHUYỂN PHA AN TOÀN}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont Đèn Vàng cố định: $3\text{s}$}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont Toàn Đỏ: $T_{\text{wait}} = 2\text{s}$}\\
+        {\fontsize{8.5pt}{10.2pt}\selectfont (Làm sạch tâm nút giao)}
+    };
+
+    \draw[arrow] (greenEW.east) -| (trans1.north);
+    \node[cond, align=left, anchor=south west] at (3.6, 1.62) {Hết $47\text{s}$ chuẩn hoặc\\kích hoạt TH1--TH3};
+
+    \draw[arrow] (trans1.south) |- (greenNS.east);
+    \node[cond, align=left, anchor=north west] at (3.6, -1.62) {Sau $3\text{s}$ Vàng + $2\text{s}$ Toàn Đỏ};
+
+    \draw[arrow] (greenNS.west) -| (trans2.south);
+    \node[cond, align=right, anchor=north east] at (-3.6, -1.62) {Hết $47\text{s}$ chuẩn hoặc\\kích hoạt TH1--TH3};
+
+    \draw[arrow] (trans2.north) |- (greenEW.west);
+    \node[cond, align=right, anchor=south east] at (-3.6, 1.62) {Sau $3\text{s}$ Vàng + $2\text{s}$ Toàn Đỏ};
+
+\end{tikzpicture}
+\end{document}

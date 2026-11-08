@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 420" width="1120" height="420" font-family="'Montserrat', 'Inter', 'Instrument Sans', 'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrFsmSlate" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 1 1.5 L 10.5 6 L 1 10.5 z" fill="#1E293B"/>
+    </marker>
+  </defs>
+
+  <rect x="2" y="2" width="1116" height="416" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- TOP STATE: GREEN EW -->
+  <g transform="translate(320, 22)">
+    <rect width="480" height="110" rx="14" ry="14" fill="#ECFDF5" stroke="#059669" stroke-width="2.8"/>
+    <text x="240" y="34" text-anchor="middle" font-size="18.5" font-weight="800" fill="#065F46">TRẠNG THÁI 1: PHA XANH TRỤC EW</text>
+    <text x="240" y="63" text-anchor="middle" font-size="16" font-weight="600" fill="#1E293B">
+      Trục EW: <tspan font-weight="800" fill="#059669">XANH (47s)</tspan>   |   Trục NS: <tspan font-weight="800" fill="#B45309">ĐỎ (50s)</tspan>
+    </text>
+    <rect x="86" y="76" width="308" height="24" rx="6" fill="#E0F2FE"/>
+    <text x="240" y="93" text-anchor="middle" font-size="14" font-weight="700" fill="#0369A1">Ngưỡng xanh tối thiểu: G_min = 10s</text>
+  </g>
+
+  <!-- RIGHT STATE: SAFE TRANSITION EW -> NS -->
+  <g transform="translate(836, 150)">
+    <rect width="258" height="120" rx="14" ry="14" fill="#FFFBEB" stroke="#D97706" stroke-width="2.8"/>
+    <text x="129" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#B45309">CHUYỂN PHA AN TOÀN</text>
+    <text x="129" y="58" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1E293B">Đèn Vàng cố định: 3s</text>
+    <text x="129" y="83" text-anchor="middle" font-size="15.5" font-weight="800" fill="#D97706">Toàn Đỏ: T_wait = 2s</text>
+    <text x="129" y="106" text-anchor="middle" font-size="13.5" font-style="italic" fill="#64748B">(Làm sạch tâm nút giao)</text>
+  </g>
+
+  <!-- BOTTOM STATE: GREEN NS -->
+  <g transform="translate(320, 288)">
+    <rect width="480" height="110" rx="14" ry="14" fill="#ECFDF5" stroke="#059669" stroke-width="2.8"/>
+    <text x="240" y="34" text-anchor="middle" font-size="18.5" font-weight="800" fill="#065F46">TRẠNG THÁI 2: PHA XANH TRỤC NS</text>
+    <text x="240" y="63" text-anchor="middle" font-size="16" font-weight="600" fill="#1E293B">
+      Trục NS: <tspan font-weight="800" fill="#059669">XANH (47s)</tspan>   |   Trục EW: <tspan font-weight="800" fill="#B45309">ĐỎ (50s)</tspan>
+    </text>
+    <rect x="86" y="76" width="308" height="24" rx="6" fill="#E0F2FE"/>
+    <text x="240" y="93" text-anchor="middle" font-size="14" font-weight="700" fill="#0369A1">Ngưỡng xanh tối thiểu: G_min = 10s</text>
+  </g>
+
+  <!-- LEFT STATE: SAFE TRANSITION NS -> EW -->
+  <g transform="translate(26, 150)">
+    <rect width="258" height="120" rx="14" ry="14" fill="#FFFBEB" stroke="#D97706" stroke-width="2.8"/>
+    <text x="129" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#B45309">CHUYỂN PHA AN TOÀN</text>
+    <text x="129" y="58" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1E293B">Đèn Vàng cố định: 3s</text>
+    <text x="129" y="83" text-anchor="middle" font-size="15.5" font-weight="800" fill="#D97706">Toàn Đỏ: T_wait = 2s</text>
+    <text x="129" y="106" text-anchor="middle" font-size="13.5" font-style="italic" fill="#64748B">(Làm sạch tâm nút giao)</text>
+  </g>
+
+  <!-- CENTER DUAL-MODE SUPERVISOR CORE -->
+  <g transform="translate(382, 166)">
+    <rect width="356" height="88" rx="12" ry="12" fill="#F8FAFC" stroke="#0284C7" stroke-width="2" stroke-dasharray="7,4"/>
+    <text x="178" y="28" text-anchor="middle" font-size="15" font-weight="800" fill="#0284C7">BỘ XÉT DUYỆT Lõi 1 Hz (DUAL-MODE)</text>
+    <text x="178" y="51" text-anchor="middle" font-size="14" font-weight="600" fill="#334155">Đo S_congestion &amp; cờ ưu tiên has_emer</text>
+    <text x="178" y="73" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0F172A">Can thiệp TH1 – TH4  |  Khóa T_red_max ≤ 100s</text>
+  </g>
+
+  <!-- ORTHOGONAL TRANSITION ARROWS -->
+  <!-- EW -> Trans 1 -->
+  <polyline points="800,77 965,77 965,144" fill="none" stroke="#1E293B" stroke-width="2.8" marker-end="url(#arrFsmSlate)"/>
+  <text x="816" y="47" font-size="14.5" font-weight="700" fill="#B45309">Hết 47s chuẩn hoặc</text>
+  <text x="816" y="66" font-size="14.5" font-weight="700" fill="#B45309">kích hoạt TH1 – TH3</text>
+
+  <!-- Trans 1 -> NS -->
+  <polyline points="965,270 965,343 808,343" fill="none" stroke="#1E293B" stroke-width="2.8" marker-end="url(#arrFsmSlate)"/>
+  <text x="816" y="369" font-size="14.5" font-weight="700" fill="#059669">Sau 3s Vàng + 2s Toàn Đỏ</text>
+
+  <!-- NS -> Trans 2 -->
+  <polyline points="320,343 155,343 155,278" fill="none" stroke="#1E293B" stroke-width="2.8" marker-end="url(#arrFsmSlate)"/>
+  <text x="304" y="366" text-anchor="end" font-size="14.5" font-weight="700" fill="#B45309">Hết 47s chuẩn hoặc</text>
+  <text x="304" y="385" text-anchor="end" font-size="14.5" font-weight="700" fill="#B45309">kích hoạt TH1 – TH3</text>
+
+  <!-- Trans 2 -> EW -->
+  <polyline points="155,150 155,77 312,77" fill="none" stroke="#1E293B" stroke-width="2.8" marker-end="url(#arrFsmSlate)"/>
+  <text x="304" y="64" text-anchor="end" font-size="14.5" font-weight="700" fill="#059669">Sau 3s Vàng + 2s Toàn Đỏ</text>
+</svg>

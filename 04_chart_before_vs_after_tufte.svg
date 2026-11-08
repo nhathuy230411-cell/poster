@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 490" width="1040" height="490" font-family="'Montserrat', 'Inter', 'Instrument Sans', 'Segoe UI', Arial, sans-serif">
+  <!-- Clean Tufte Vector Chart Plate -->
+  <rect x="2" y="2" width="1036" height="486" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Chart Title & Legend -->
+  <text x="48" y="42" font-size="19" font-weight="800" fill="#0F172A">ĐỐI CHỨNG ĐỘ CHÍNH XÁC YOLOv12m TRƯỚC &amp; SAU TINH CHỈNH (Tập kiểm định 120 ảnh • 1.971 đối tượng)</text>
+
+  <!-- Legend -->
+  <g transform="translate(550, 62)">
+    <rect x="0" y="0" width="22" height="14" rx="3" fill="#94A3B8"/>
+    <text x="30" y="12" font-size="14" font-weight="600" fill="#475569">Trước tinh chỉnh (7-Class Init)</text>
+    <rect x="242" y="0" width="22" height="14" rx="3" fill="#0284C7"/>
+    <text x="272" y="12" font-size="14" font-weight="700" fill="#0284C7">Sau tinh chỉnh (YOLOv12m VN-ITS)</text>
+  </g>
+
+  <!-- Plot Area: x=90..990, y=95..415 (height=320 => 3.2px per 1%) -->
+  <!-- Subtle Tufte Horizontal Gridlines (0, 20, 40, 60, 80, 100%) -->
+  <g stroke="#E2E8F0" stroke-width="1.4" stroke-dasharray="6,5">
+    <line x1="90" y1="95"  x2="990" y2="95"/>
+    <line x1="90" y1="159" x2="990" y2="159"/>
+    <line x1="90" y1="223" x2="990" y2="223"/>
+    <line x1="90" y1="287" x2="990" y2="287"/>
+    <line x1="90" y1="351" x2="990" y2="351"/>
+  </g>
+
+  <!-- Y-Axis Labels -->
+  <g font-size="14" font-weight="600" fill="#64748B" text-anchor="end">
+    <text x="78" y="100">100%</text>
+    <text x="78" y="164">80%</text>
+    <text x="78" y="228">60%</text>
+    <text x="78" y="292">40%</text>
+    <text x="78" y="356">20%</text>
+    <text x="78" y="420">0%</text>
+  </g>
+
+  <!-- Y-Axis & X-Axis Hairlines (Tufte Open Spine) -->
+  <line x1="90" y1="90" x2="90" y2="415" stroke="#94A3B8" stroke-width="1.8"/>
+  <line x1="90" y1="415" x2="990" y2="415" stroke="#475569" stroke-width="2"/>
+
+  <!-- Group 1: Precision (39.84% -> 80.19%, +40.35%) center=202 -->
+  <!-- 39.84 * 3.2 = 127.5 => y = 287.5; 80.19 * 3.2 = 256.6 => y = 158.4 -->
+  <rect x="132" y="287.5" width="66" height="127.5" rx="5" fill="#94A3B8"/>
+  <text x="165" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#475569">39,84%</text>
+  <rect x="204" y="158.4" width="66" height="256.6" rx="5" fill="#0284C7"/>
+  <text x="237" y="130" text-anchor="middle" font-size="16" font-weight="800" fill="#0284C7">80,19%</text>
+  <text x="237" y="149" text-anchor="middle" font-size="14" font-weight="800" fill="#059669">(+40,35%)</text>
+  <text x="201" y="446" text-anchor="middle" font-size="16" font-weight="800" fill="#0F172A">Precision (%)</text>
+  <text x="201" y="467" text-anchor="middle" font-size="13" fill="#64748B">Độ chính xác</text>
+
+  <!-- Group 2: Recall (48.75% -> 80.37%, +31.62%) center=427 -->
+  <!-- 48.75 * 3.2 = 156.0 => y = 259.0; 80.37 * 3.2 = 257.2 => y = 157.8 -->
+  <rect x="357" y="259.0" width="66" height="156.0" rx="5" fill="#94A3B8"/>
+  <text x="390" y="249" text-anchor="middle" font-size="15" font-weight="700" fill="#475569">48,75%</text>
+  <rect x="429" y="157.8" width="66" height="257.2" rx="5" fill="#0284C7"/>
+  <text x="462" y="129" text-anchor="middle" font-size="16" font-weight="800" fill="#0284C7">80,37%</text>
+  <text x="462" y="148" text-anchor="middle" font-size="14" font-weight="800" fill="#059669">(+31,62%)</text>
+  <text x="426" y="446" text-anchor="middle" font-size="16" font-weight="800" fill="#0F172A">Recall (%)</text>
+  <text x="426" y="467" text-anchor="middle" font-size="13" fill="#64748B">Độ bao phủ</text>
+
+  <!-- Group 3: mAP@0.50 (34.12% -> 74.53%, +40.41% STAR) center=652 -->
+  <!-- 34.12 * 3.2 = 109.2 => y = 305.8; 74.53 * 3.2 = 238.5 => y = 176.5 -->
+  <rect x="582" y="305.8" width="66" height="109.2" rx="5" fill="#94A3B8"/>
+  <text x="615" y="296" text-anchor="middle" font-size="15" font-weight="700" fill="#475569">34,12%</text>
+  <rect x="654" y="176.5" width="66" height="238.5" rx="5" fill="#0284C7" stroke="#D97706" stroke-width="2.5"/>
+  <rect x="633" y="118" width="108" height="48" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+  <text x="687" y="139" text-anchor="middle" font-size="16.5" font-weight="800" fill="#0284C7">74,53%</text>
+  <text x="687" y="159" text-anchor="middle" font-size="14.5" font-weight="800" fill="#D97706">★ +40,41%</text>
+  <text x="651" y="446" text-anchor="middle" font-size="16" font-weight="800" fill="#0F172A">mAP@0.50 (%)</text>
+  <text x="651" y="467" text-anchor="middle" font-size="13" font-weight="700" fill="#D97706">Chỉ số trọng tâm</text>
+
+  <!-- Group 4: mAP@0.50:0.95 (18.48% -> 47.15%, +28.67%) center=877 -->
+  <!-- 18.48 * 3.2 = 59.1 => y = 355.9; 47.15 * 3.2 = 150.9 => y = 264.1 -->
+  <rect x="807" y="355.9" width="66" height="59.1" rx="5" fill="#94A3B8"/>
+  <text x="840" y="346" text-anchor="middle" font-size="15" font-weight="700" fill="#475569">18,48%</text>
+  <rect x="879" y="264.1" width="66" height="150.9" rx="5" fill="#0284C7"/>
+  <text x="912" y="236" text-anchor="middle" font-size="16" font-weight="800" fill="#0284C7">47,15%</text>
+  <text x="912" y="255" text-anchor="middle" font-size="14" font-weight="800" fill="#059669">(+28,67%)</text>
+  <text x="876" y="446" text-anchor="middle" font-size="16" font-weight="800" fill="#0F172A">mAP@0.50:0.95 (%)</text>
+  <text x="876" y="467" text-anchor="middle" font-size="13" fill="#64748B">Độ khớp khung nghiêm ngặt</text>
+</svg>
