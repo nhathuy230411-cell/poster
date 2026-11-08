@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 390" width="1960" height="780" font-family="'Times New Roman', 'IBM Plex Serif', serif">
+  <defs>
+    <marker id="arrowNavyFSM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0F2537"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="980" height="390" fill="#FFFFFF"/>
+
+  <!-- Top State: GREEN EW -->
+  <rect x="295" y="24" width="390" height="86" rx="8" ry="8" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2.2"/>
+  <text x="490" y="50" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#0F2537">TRẠNG THÁI 1: PHA XANH TRỤC EW</text>
+  <text x="490" y="73" text-anchor="middle" font-size="14.5" fill="#0F2537">Trục EW: <tspan font-weight="bold" fill="#2E7D32">XANH</tspan> (47s)  |  Trục NS: <tspan font-weight="bold" fill="#C62828">ĐỎ</tspan> (50s)</text>
+  <text x="490" y="95" text-anchor="middle" font-size="14.5" fill="#0F2537">Ngưỡng xanh tối thiểu: G_min = 10s</text>
+
+  <!-- Right State: TRANSITION 1 -->
+  <rect x="720" y="142" width="236" height="106" rx="8" ry="8" fill="#FFEBEE" stroke="#C62828" stroke-width="2.2"/>
+  <text x="838" y="168" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#0F2537">CHUYỂN PHA AN TOÀN</text>
+  <text x="838" y="190" text-anchor="middle" font-size="14" fill="#0F2537">Đèn Vàng cố định: 3s</text>
+  <text x="838" y="211" text-anchor="middle" font-size="14" fill="#0F2537">Toàn Đỏ: T_wait = 2s</text>
+  <text x="838" y="232" text-anchor="middle" font-size="13.5" font-style="italic" fill="#0F2537">(Làm sạch tâm nút giao)</text>
+
+  <!-- Bottom State: GREEN NS -->
+  <rect x="295" y="280" width="390" height="86" rx="8" ry="8" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2.2"/>
+  <text x="490" y="306" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#0F2537">TRẠNG THÁI 2: PHA XANH TRỤC NS</text>
+  <text x="490" y="329" text-anchor="middle" font-size="14.5" fill="#0F2537">Trục NS: <tspan font-weight="bold" fill="#2E7D32">XANH</tspan> (47s)  |  Trục EW: <tspan font-weight="bold" fill="#C62828">ĐỎ</tspan> (50s)</text>
+  <text x="490" y="351" text-anchor="middle" font-size="14.5" fill="#0F2537">Ngưỡng xanh tối thiểu: G_min = 10s</text>
+
+  <!-- Left State: TRANSITION 2 -->
+  <rect x="24" y="142" width="236" height="106" rx="8" ry="8" fill="#FFEBEE" stroke="#C62828" stroke-width="2.2"/>
+  <text x="142" y="168" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#0F2537">CHUYỂN PHA AN TOÀN</text>
+  <text x="142" y="190" text-anchor="middle" font-size="14" fill="#0F2537">Đèn Vàng cố định: 3s</text>
+  <text x="142" y="211" text-anchor="middle" font-size="14" fill="#0F2537">Toàn Đỏ: T_wait = 2s</text>
+  <text x="142" y="232" text-anchor="middle" font-size="13.5" font-style="italic" fill="#0F2537">(Làm sạch tâm nút giao)</text>
+
+  <!-- Arrow: GREEN EW -> TRANSITION 1 -->
+  <polyline points="685,67 838,67 838,138" fill="none" stroke="#0F2537" stroke-width="2.2" marker-end="url(#arrowNavyFSM)"/>
+  <text x="702" y="44" font-size="13.5" font-style="italic" fill="#C62828">Hết 47s chuẩn hoặc</text>
+  <text x="702" y="61" font-size="13.5" font-style="italic" fill="#C62828">kích hoạt TH1–TH3</text>
+
+  <!-- Arrow: TRANSITION 1 -> GREEN NS -->
+  <polyline points="838,248 838,323 689,323" fill="none" stroke="#0F2537" stroke-width="2.2" marker-end="url(#arrowNavyFSM)"/>
+  <text x="700" y="346" font-size="13.5" font-style="italic" fill="#C62828">Sau 3s Vàng + 2s Toàn Đỏ</text>
+
+  <!-- Arrow: GREEN NS -> TRANSITION 2 -->
+  <polyline points="295,323 142,323 142,252" fill="none" stroke="#0F2537" stroke-width="2.2" marker-end="url(#arrowNavyFSM)"/>
+  <text x="278" y="343" text-anchor="end" font-size="13.5" font-style="italic" fill="#C62828">Hết 47s chuẩn hoặc</text>
+  <text x="278" y="360" text-anchor="end" font-size="13.5" font-style="italic" fill="#C62828">kích hoạt TH1–TH3</text>
+
+  <!-- Arrow: TRANSITION 2 -> GREEN EW -->
+  <polyline points="142,142 142,67 291,67" fill="none" stroke="#0F2537" stroke-width="2.2" marker-end="url(#arrowNavyFSM)"/>
+  <text x="280" y="55" text-anchor="end" font-size="13.5" font-style="italic" fill="#C62828">Sau 3s Vàng + 2s Toàn Đỏ</text>
+</svg>

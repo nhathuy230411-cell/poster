@@ -1,0 +1,75 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage{mathptmx}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usetikzlibrary{calc,arrows.meta,positioning,shapes.geometric,fit,backgrounds}
+
+\definecolor{Navy}{HTML}{0F2537}
+\definecolor{Teal}{HTML}{0D6E74}
+\definecolor{Gold}{HTML}{C59A43}
+\definecolor{DarkBlue}{HTML}{1565C0}
+\definecolor{DarkRed}{HTML}{C62828}
+\definecolor{DarkGreen}{HTML}{2E7D32}
+\definecolor{Amber}{HTML}{E65100}
+\definecolor{LightBlueBg}{HTML}{E3F2FD}
+\definecolor{LightGreenBg}{HTML}{E8F5E9}
+\definecolor{LightRedBg}{HTML}{FFEBEE}
+\definecolor{LightGrayBg}{HTML}{F5F5F5}
+
+\begin{document}
+\begin{tikzpicture}[
+    node distance=0.30cm,
+    block/.style={
+        draw=Navy,
+        rounded corners=4pt,
+        line width=1.0pt,
+        fill=LightGrayBg,
+        align=center,
+        inner sep=3.5pt,
+        text width=11.6cm,
+        minimum height=0.80cm,
+        font=\fontsize{10pt}{11.8pt}\selectfont
+    },
+    arrow/.style={-{Stealth[length=4.5pt, width=3.8pt]}, line width=1.0pt, draw=Navy},
+    feedback/.style={-{Stealth[length=4.5pt, width=3.8pt]}, line width=1.0pt, draw=Teal, dashed}
+]
+
+    \node[block, fill=LightBlueBg] (step1) {
+        \textbf{1. THU THẬP DỮ LIỆU ĐẦU VÀO (MÔ PHỎNG SUMO / CAMERA)}\\
+        {\fontsize{9.5pt}{11.2pt}\selectfont Trích xuất tọa độ, vận tốc, mã định danh và phân loại nhóm phương tiện}
+    };
+
+    \node[block, fill=white, below=of step1] (step2) {
+        \textbf{2. TÍNH TOÁN ÁP SUẤT DIỆN TÍCH VÀ NHẬN DIỆN XE ƯU TIÊN}\\
+        {\fontsize{9.5pt}{11.2pt}\selectfont Xác định chỉ số $S_{\text{congestion}} = \sum N_i K_i + S_{\text{mặt đường}}$ và trạng thái xe ưu tiên (\texttt{has\_emer})}
+    };
+
+    \node[block, fill=white, below=of step2] (step3) {
+        \textbf{3. BỘ ĐIỀU KHIỂN LAI HAI CHẾ ĐỘ}\\
+        {\fontsize{9.5pt}{11.2pt}\selectfont Vận hành chu kỳ nền $100\text{s}$ đối xứng kết hợp xét duyệt 4 kịch bản thích ứng (TH1 -- TH4)}
+    };
+
+    \node[block, fill=LightRedBg, draw=DarkRed, below=of step3] (step4) {
+        \textbf{4. CƠ CHẾ BẢO VỆ AN TOÀN CHUYỂN PHA}\\
+        {\fontsize{9.5pt}{11.2pt}\selectfont Duy trì $3\text{s}$ Đèn Vàng cố định tiếp nối bởi khoảng trễ toàn đỏ $T_{\text{wait}} = 2\text{s}$ làm sạch giao lộ}
+    };
+
+    \node[block, fill=LightGreenBg, draw=DarkGreen, below=of step4] (step5) {
+        \textbf{5. CẬP NHẬT TRẠNG THÁI ĐÈN TÍN HIỆU TẠI NÚT GIAO}\\
+        {\fontsize{9.5pt}{11.2pt}\selectfont Truyền lệnh điều khiển qua giao diện TraCI đến cụm đèn trung tâm}
+    };
+
+    \draw[arrow] (step1) -- (step2);
+    \draw[arrow] (step2) -- (step3);
+    \draw[arrow] (step3) -- (step4);
+    \draw[arrow] (step4) -- (step5);
+
+    \coordinate (fb_out) at ([xshift=0.95cm]step5.east);
+    \coordinate (fb_in)  at ([xshift=0.95cm]step1.east);
+    \draw[feedback] (step5.east) -- (fb_out) -- node[sloped, above, font=\fontsize{9pt}{11pt}\selectfont\itshape, text=Teal] {Vòng lặp phản hồi (1 Hz)} (fb_in) -- (step1.east);
+
+\end{tikzpicture}
+\end{document}

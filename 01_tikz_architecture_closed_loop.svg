@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="1720" height="1040" font-family="'Times New Roman', 'IBM Plex Serif', serif">
+  <defs>
+    <marker id="arrowNavy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0F2537"/>
+    </marker>
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0D6E74"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="520" fill="#FFFFFF"/>
+
+  <!-- Step 1 -->
+  <rect x="40" y="25" width="700" height="68" rx="6" ry="6" fill="#E3F2FD" stroke="#0F2537" stroke-width="2"/>
+  <text x="390" y="53" text-anchor="middle" font-size="17" font-weight="bold" fill="#0F2537">1. THU THẬP DỮ LIỆU ĐẦU VÀO (MÔ PHỎNG SUMO / CAMERA)</text>
+  <text x="390" y="76" text-anchor="middle" font-size="15" fill="#0F2537">Trích xuất tọa độ, vận tốc, mã định danh và phân loại nhóm phương tiện</text>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="390" y1="93" x2="390" y2="118" stroke="#0F2537" stroke-width="2" marker-end="url(#arrowNavy)"/>
+
+  <!-- Step 2 -->
+  <rect x="40" y="122" width="700" height="68" rx="6" ry="6" fill="#FFFFFF" stroke="#0F2537" stroke-width="2"/>
+  <text x="390" y="150" text-anchor="middle" font-size="17" font-weight="bold" fill="#0F2537">2. TÍNH TOÁN ÁP SUẤT DIỆN TÍCH VÀ NHẬN DIỆN XE ƯU TIÊN</text>
+  <text x="390" y="173" text-anchor="middle" font-size="15" fill="#0F2537">Xác định chỉ số S_congestion = Σ(N_i · K_i) + S_mặt_đường và trạng thái xe ưu tiên (has_emer)</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="390" y1="190" x2="390" y2="215" stroke="#0F2537" stroke-width="2" marker-end="url(#arrowNavy)"/>
+
+  <!-- Step 3 -->
+  <rect x="40" y="219" width="700" height="68" rx="6" ry="6" fill="#FFFFFF" stroke="#0F2537" stroke-width="2"/>
+  <text x="390" y="247" text-anchor="middle" font-size="17" font-weight="bold" fill="#0F2537">3. BỘ ĐIỀU KHIỂN LAI HAI CHẾ ĐỘ (DUAL-MODE CONTROLLER)</text>
+  <text x="390" y="270" text-anchor="middle" font-size="15" fill="#0F2537">Vận hành chu kỳ nền 100s đối xứng kết hợp xét duyệt 4 kịch bản thích ứng (TH1 – TH4)</text>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="390" y1="287" x2="390" y2="312" stroke="#0F2537" stroke-width="2" marker-end="url(#arrowNavy)"/>
+
+  <!-- Step 4 -->
+  <rect x="40" y="316" width="700" height="68" rx="6" ry="6" fill="#FFEBEE" stroke="#C62828" stroke-width="2"/>
+  <text x="390" y="344" text-anchor="middle" font-size="17" font-weight="bold" fill="#0F2537">4. CƠ CHẾ BẢO VỆ AN TOÀN CHUYỂN PHA</text>
+  <text x="390" y="367" text-anchor="middle" font-size="15" fill="#0F2537">Duy trì 3s Đèn Vàng cố định tiếp nối bởi khoảng trễ toàn đỏ T_wait = 2s làm sạch giao lộ</text>
+
+  <!-- Arrow 4 -> 5 -->
+  <line x1="390" y1="384" x2="390" y2="409" stroke="#0F2537" stroke-width="2" marker-end="url(#arrowNavy)"/>
+
+  <!-- Step 5 -->
+  <rect x="40" y="413" width="700" height="68" rx="6" ry="6" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="390" y="441" text-anchor="middle" font-size="17" font-weight="bold" fill="#0F2537">5. CẬP NHẬT TRẠNG THÁI ĐÈN TÍN HIỆU TẠI NÚT GIAO</text>
+  <text x="390" y="464" text-anchor="middle" font-size="15" fill="#0F2537">Truyền lệnh điều khiển qua giao diện TraCI đến cụm đèn trung tâm</text>
+
+  <!-- Feedback Loop (1 Hz) -->
+  <polyline points="740,447 805,447 805,59 744,59" fill="none" stroke="#0D6E74" stroke-width="2.2" stroke-dasharray="7,5" marker-end="url(#arrowTeal)"/>
+  <text x="826" y="253" text-anchor="middle" font-size="15.5" font-style="italic" font-weight="bold" fill="#0D6E74" transform="rotate(-90, 826, 253)">Vòng lặp phản hồi (1 Hz)</text>
+</svg>
